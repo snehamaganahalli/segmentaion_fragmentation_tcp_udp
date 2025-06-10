@@ -46,4 +46,29 @@ S3 = 1960\
 S4 = 120\
 
 **MTU is 2000 and all the segments are within MTU so no fragmentation is done.\
-The Maximum Segment Size (MSS) is determined during the TCP three-way handshake and is based on the Maximum Transmission Unit (MTU) of the underlying network.**
+The Maximum Segment Size (MSS) is determined during the TCP three-way handshake and is based on the Maximum Transmission Unit (MTU) of the underlying network.**\
+
+================================
+
+**When fragmentation takes place?**\
+DF bit should be 0
+
+**How to identify the fragments of the same packet**\
+The Identification field is a 16-bit field in the IPv4 header used to uniquely identify fragments of an original IP packet.\
+Identification filed in the IP header will be same for all the fragments.
+
+MF bit (More Fragment filed) will be 1 for all frgs except last one.
+
+Fragment offset (FO) field is used reassemble the packet. It tells in which position the fragment belongs in the packet.\
+FO field is 13 bit. Therefore you can store upto 2^13 -1 (including 0) = 8191 B. Since this filed is multiple of 8 bytes. It becomes 8191*8=65528 B.
+
+**Reassembly:**\
+Always reassembly happens at the end points and never by the routers.
+
+Eg:
+4000 B (MSS + TCP header) of data is fragmented as below. MTU is 1500\
+F1 (fragment1): 1480 => Starting byte: 0 => FO: 0\
+F2: 1480 =>                 1480 => FO = 1480/8 = 185\
+F3: 1440 =>                 2690 => FO = 2690/8 = 370
+
+=
