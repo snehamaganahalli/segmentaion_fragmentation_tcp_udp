@@ -15,7 +15,8 @@ Dst IP\
 Protocol: UDP(17)/TCP(6)
 
 Total length: including IP header\
-IHL: IP header length  min:20 Max:60B. Becuase of this field you may have options, padding: both are variable \
+IHL: 1byte(4 bits: 1111b = 15 => 4*15 = 60 B) IP header length  min:20 Max:60B. Becuase of this field you may have options, padding: both are variable. Fragment offset is multiplication of 8, here it is 4 \
+
 
 Support fragmentation:\
 Identification\
@@ -31,6 +32,7 @@ TOS
 ============================================================
 
 IPV6:
+
 
 
 
