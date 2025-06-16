@@ -23,6 +23,8 @@ Identification\
 flags: DF/MF\
 Fragment Offset
 
+checksum: On the IP header
+
 It will hop from 1 router to another:\
 TTL
 
@@ -31,11 +33,30 @@ TOS
 
 ============================================================
 
-IPV6:
+IPV6:\
+version\
+src ip\
+dst ip
 
+payload length:(in V4 it was total length): Here it is only thepayload excluding the IPV6 header.
+type/Next header: TCP/UDP\
 
+No fragmentation support:\
+It supports only src/dest fragmentation. Router should support the acceleration of the fragmentation packets.
 
+TTL/Hop limit:
 
+QOS\
+Traffic class\
+Flow label
+
+No checksum
+
+==================
+
+Ethernet/data link layer: Frame: It includes the complete (eth-header+payload) = ETH hder + IP packet + FCS. (ethernet / wifi terminology)\
+Network layer: Packet: IP headr = IP hdr + TCP/UDP segment\
+Segment: TCP/UDP hdr + App data.
 
 
 
