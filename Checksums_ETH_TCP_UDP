@@ -1,1 +1,4 @@
+Ethernet checksum/ CRC:
+https://www.geeksforgeeks.org/computer-networks/how-does-crc-in-a-frame-determine-if-data-is-intact/
 
+CRC is based on treating the data to be transmitted as a polynomial. The sender and receiver agree on a fixed divisor polynomial, often referred to as the generator polynomial.
