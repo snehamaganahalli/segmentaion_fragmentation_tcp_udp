@@ -15,7 +15,7 @@ Dst IP\
 Protocol: UDP(17)/TCP(6)
 
 Total length: including IP header\
-IHL: IP header length  min:20 Max:60 B \
+IHL: IP header length  min:20 Max:60B. Becuase of this field you may have options, padding: both are variable \
 
 Support fragmentation:\
 Identification\
