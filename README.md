@@ -69,6 +69,6 @@ Eg:
 4000 B (MSS + TCP header) of data is fragmented as below. MTU is 1500\
 F1 (fragment1): 1480 => Starting byte: 0 => FO: 0\
 F2: 1480 =>                 1480 => FO = 1480/8 = 185\
-F3: 1440 =>                 2690 => FO = 2690/8 = 370
+F3: 1440 =>                 2960 => FO = 2690/8 = 370
 
 =
